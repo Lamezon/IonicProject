@@ -18,9 +18,32 @@
         </ion-item>
       
         <ion-item>
-          <ion-label stacked>Gender</ion-label>
-          <ion-input type="text" name="gender" [(ngModel)]="model.gender"></ion-input>
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="gender">
+            <ion-option value="f">Female</ion-option>
+            <ion-option value="m">Male</ion-option>
+          </ion-select>
         </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Birthday</ion-label>
+          <ion-input type="date" name="birthday" [(ngModel)]="model.birthday"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Employed?</ion-label>
+          <ion-select [(ngModel)]="employed">
+            <ion-option value=true>Yes</ion-option>
+            <ion-option value=false>No</ion-option>
+          </ion-select>
+        </ion-item>
+
+        
+        <ion-item>
+          <ion-label stacked>Salary</ion-label>
+          <ion-input type="number" name="salary" [(ngModel)]="model.salary"></ion-input>
+        </ion-item>
+     
       </ion-list>
       <button ion-button block (click)="createContact()">
           Criar contato
