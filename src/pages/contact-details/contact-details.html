@@ -9,13 +9,19 @@
     <ion-title>contact-details</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
+<ion-content>
     <div *ngIf="contact" text-center>
       <ion-item>
-        <h2>{{contact.name}}</h2>
-        <p>{{contact.gender}}</p>
+          <ion-card class="ion-card">
+
+              <ion-card>
+                  <img src="../../assets/imgs/logo.png" width="40px" height="40px">
+                  <div class="card-title">{{contact.name}}</div>
+                  <div class="card-subtitle">{{contact.gender}}</div>
+                </ion-card>
+            
+            </ion-card>
       </ion-item>
     </div>
-  </ion-content>
+ </ion-content>
   
