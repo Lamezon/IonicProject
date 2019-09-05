@@ -23,7 +23,7 @@ export class CreateContactPage {
     this.model = new Contact();
     this.model.name = 'Novo contato';
     this.model.gender = 'male';
-    this.model.birthday = '2000-01-01';
+    this.model.birthday = '1999-01-01';
     this.model.employed = true;
     this.model.salary = '1000';
     

@@ -25,6 +25,17 @@ export class ContactsProvider {
     });
   
   }
+  getContact(id: number) {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.apiUrl + '/contacts/' + id + '.json')
+        .subscribe(res => {
+            resolve(res);
+        }, (err) => {
+            reject(err);
+        });
+    });
+  }
+  
   addContact(data){
     return new Promise((resolve, reject) => {
       this.http.post(this.apiUrl + '/contacts.json', data)
