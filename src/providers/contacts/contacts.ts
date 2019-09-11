@@ -11,6 +11,18 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ContactsProvider {
 
+  destroyContact(id: number) {
+    return new Promise((resolve, reject) => {
+      this.http.delete(this.apiUrl + '/contacts/' + id + '.json')
+        .subscribe(res => {
+            resolve(res);
+        }, (err) => {
+            reject(err);
+        });
+    });
+  }
+  
+
   apiUrl = 'https://contacts-v1-dw2.herokuapp.com';
   constructor(public http: HttpClient) {
     console.log('Hello ContactsProvider Provider');

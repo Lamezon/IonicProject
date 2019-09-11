@@ -46,9 +46,21 @@ export class ContactsListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactsListPage');
   }
-  refreshPage(){
-    this.navCtrl.setRoot(this.navCtrl.getActive().component);
-    
-  }
+  
+  deleteContact(contact: any) {
+  this.toast.create({ message: '...', duration: 3000 }).present();
+
+  this.contactsProvider.destroyContact(contact.id)
+  .then((result: any) => {
+    this.toast.create({ message: 'Excluído!' }).present();
+  })
+  .catch((error: any) => {
+    this.toast.create({ message: error.error }).present();
+  });
+}
+refreshPage(){
+  this.navCtrl.setRoot(this.navCtrl.getActive().component);
+  
+}
 
 }
