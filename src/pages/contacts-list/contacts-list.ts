@@ -50,13 +50,19 @@ export class ContactsListPage {
   deleteContact(contact: any) {
   this.toast.create({ message: '...', duration: 3000 }).present();
 
+
   this.contactsProvider.destroyContact(contact.id)
   .then((result: any) => {
     this.toast.create({ message: 'Excluído!' }).present();
+    this.toast.create({ message: 'Reloading Page', duration: 3000 }).present();
+    this.refreshPage();
+    
   })
   .catch((error: any) => {
     this.toast.create({ message: error.error }).present();
   });
+  
+  
 }
 refreshPage(){
   this.navCtrl.setRoot(this.navCtrl.getActive().component);
