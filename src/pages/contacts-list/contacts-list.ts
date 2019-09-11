@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ContactsProvider } from '../../providers/contacts/contacts';
 /**
@@ -44,6 +45,10 @@ export class ContactsListPage {
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactsListPage');
+  }
+  refreshPage(){
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);
+    
   }
 
 }

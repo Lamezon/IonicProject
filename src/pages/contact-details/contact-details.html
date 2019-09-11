@@ -15,9 +15,13 @@
           <ion-card class="ion-card">
 
               <ion-card>
-                  <img src="../../assets/imgs/logo.png" width="40px" height="40px">
+                  <div class="card-image"><img src="../../assets/imgs/logo.png" width="40px" height="40px"></div>
                   <div class="card-title">{{contact.name}}</div>
-                  <div class="card-subtitle">{{contact.gender}}</div>
+                  <div class="card-subtitle">Gender: {{contact.gender}}</div>
+                  <div class="card-subtitle">Birthday: {{contact.birthday}}</div>
+                  <div class="card-subtitle">Employed: {{contact.employed}}</div>
+                  <div class="card-subtitle">Salary: U${{contact.salary}}</div>
+                  
                 </ion-card>
             
             </ion-card>
