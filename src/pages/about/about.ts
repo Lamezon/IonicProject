@@ -13,6 +13,7 @@ export class AboutPage {
   longitude: any;
   elevation: any;
   accuracy: any;
+  speed: any;
   constructor(public navCtrl: NavController, private geolocation: Geolocation) {
 
   }
@@ -25,6 +26,7 @@ export class AboutPage {
       this.longitude = this.resp_coords.longitude;
       this.elevation = this.resp_coords.elevation;
       this.accuracy = this.resp_coords.accuracy;
+      this.speed = this.resp_coords.speed;
 
      
   
@@ -42,6 +44,7 @@ export class AboutPage {
         this.longitude = this.resp_coords.longitude;
         this.elevation = this.resp_coords.elevation;
         this.accuracy = this.resp_coords.accuracy;
+        this.speed = this.resp_coords.speed;
 
       },(error) => {
         console.log(error);
