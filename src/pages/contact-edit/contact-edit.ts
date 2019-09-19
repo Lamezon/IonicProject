@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ContactsProvider } from '../../providers/contacts/contacts';
+import { ContactsListPage } from '../contacts-list/contacts-list';
 
 
 
@@ -33,9 +34,10 @@ export class ContactEditPage {
       
   }
   saveContact() {
-    this.contactProvider.updateContact(this.model.id, this.model)
+    this.contactProvider.updateContact(1, this.model)
     .then((result: any) => {
       this.toast.create({ message: 'Usuário Alterado' }).present();
+      
         this.navCtrl.pop();
         this.toast.create({ message: '...', duration: 3000 }).present();
         

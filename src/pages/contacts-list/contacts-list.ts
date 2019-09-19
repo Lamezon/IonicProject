@@ -45,8 +45,11 @@ export class ContactsListPage {
   }
   
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContactsListPage');
+    console.log('ionViewDidLoad ContactsListPage');    
+    
+
   }
+
   
 
   openEditContact(id: number) {
