@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
+
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -47,7 +48,8 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ContactsProvider,
-    Geolocation
+    Geolocation,
+    GoogleMaps
 
   ]
 })
