@@ -9,7 +9,8 @@ import {
   CameraPosition,
   MarkerOptions,
   Marker,
-  Environment
+  Environment,
+  Circle
 } from '@ionic-native/google-maps';
 @Component({
   selector: 'page-about',
@@ -40,23 +41,43 @@ let mapOptions: GoogleMapOptions = {
       lng: this.longitude
     },
     zoom: 18,
-    tilt: 30
+    tilt: 30,
+    
+    
   }
+  
 }
+
+
+var circle = new google.maps.Circle({
+  map: map,
+  radius: 50,    // 10 miles in metres
+  fillColor: '#AA0000'
+});
+circle.bindTo('center', marker, 'position');
 this.map = GoogleMaps.create('map', mapOptions);
 let marker: Marker = this.map.addMarkerSync({
-  	title: 'Eu',
-  	icon: 'blue',
-  	animation: 'DROP',
+  	title: 'Myself',
+  	icon: 'green',
+    animation: 'DROP',
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+
   	position: {
     	lat: this.latitude,
-    	lng: this.longitude
-  	}
+      lng: this.longitude,
+      
+    }
+    
 });
 marker.showInfoWindow();
   }
 
   ionViewDidLoad() {
+    
     this.geolocation.getCurrentPosition()
     .then((resp) => {
       this.resp_coords = resp.coords;
@@ -66,7 +87,7 @@ marker.showInfoWindow();
       this.elevation = this.resp_coords.elevation;
       this.accuracy = this.resp_coords.accuracy;
       this.speed = this.resp_coords.speed;
-      
+ 
 
      
   
@@ -86,7 +107,6 @@ marker.showInfoWindow();
         this.elevation = this.resp_coords.elevation;
         this.accuracy = this.resp_coords.accuracy;
         this.speed = this.resp_coords.speed;
-
       },(error) => {
         console.log(error);
       });
