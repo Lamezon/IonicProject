@@ -9,8 +9,7 @@ import {
   CameraPosition,
   MarkerOptions,
   Marker,
-  Environment,
-  Circle
+  Environment
 } from '@ionic-native/google-maps';
 @Component({
   selector: 'page-about',
@@ -29,11 +28,11 @@ export class AboutPage {
 
   }
   loadMap() {
-    let api_key = 'AIzaSyB5kxJ96SiNeyfJFtxzomK16EOEqFjqtVY'
-Environment.setEnv({
-  'API_KEY_FOR_BROWSER_RELEASE': api_key,
-  'API_KEY_FOR_BROWSER_DEBUG': api_key
-});
+    let api_key = 'AIzaSyBmfcPWPL7bgYjy5VXoDPu_-3upn7Nhc04';
+    Environment.setEnv({
+      'API_KEY_FOR_BROWSER_RELEASE': api_key,
+      'API_KEY_FOR_BROWSER_DEBUG': api_key
+    });
 let mapOptions: GoogleMapOptions = {
   camera: {
     target: {
@@ -47,34 +46,19 @@ let mapOptions: GoogleMapOptions = {
   }
   
 }
-
-
-var circle = new google.maps.Circle({
-  map: map,
-  radius: 50,    // 10 miles in metres
-  fillColor: '#AA0000'
-});
-circle.bindTo('center', marker, 'position');
 this.map = GoogleMaps.create('map', mapOptions);
 let marker: Marker = this.map.addMarkerSync({
-  	title: 'Myself',
-  	icon: 'green',
-    animation: 'DROP',
-    strokeColor: '#FF0000',
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: '#FF0000',
-    fillOpacity: 0.35,
-
+  	title: 'Eu',
+  	icon: 'blue',
+  	animation: 'DROP',
   	position: {
     	lat: this.latitude,
-      lng: this.longitude,
-      
-    }
-    
+    	lng: this.longitude
+  	}
 });
 marker.showInfoWindow();
   }
+
 
   ionViewDidLoad() {
     
