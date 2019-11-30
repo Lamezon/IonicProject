@@ -28,7 +28,7 @@ export class AboutPage {
 
   }
   loadMap() {
-    let api_key = 'AIzaSyBmfcPWPL7bgYjy5VXoDPu_-3upn7Nhc04';
+    let api_key = 'AIzaSyB5kxJ96SiNeyfJFtxzomK16EOEqFjqtVY';
     Environment.setEnv({
       'API_KEY_FOR_BROWSER_RELEASE': api_key,
       'API_KEY_FOR_BROWSER_DEBUG': api_key
@@ -47,9 +47,23 @@ let mapOptions: GoogleMapOptions = {
   
 }
 this.map = GoogleMaps.create('map', mapOptions);
+
+
+
+let review: Marker = this.map.addMarkerSync({
+  title: 'Review',
+  icon: 'red',
+  animation: 'DROP',
+  position: {
+    lat: this.latitude+10,
+    lng: this.longitude+10,
+  }
+});
+
+
 let marker: Marker = this.map.addMarkerSync({
   	title: 'Eu',
-  	icon: 'blue',
+    icon: 'blue',
   	animation: 'DROP',
   	position: {
     	lat: this.latitude,
@@ -58,6 +72,7 @@ let marker: Marker = this.map.addMarkerSync({
 });
 marker.showInfoWindow();
   }
+
 
 
   ionViewDidLoad() {
@@ -95,7 +110,8 @@ marker.showInfoWindow();
         console.log(error);
       });
     
-  }
-  
 
-}
+     
+  
+    }
+  }
